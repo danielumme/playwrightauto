@@ -9,6 +9,11 @@ test('Assertion Test', async ({page})=>{
     const manradio = await page.locator("#gender-male")
     manradio.click()
     await expect(manradio).toBeChecked()
+
+    await expect(await page.locator('.page-title h1')).toHaveText('Register')
+
+    await expect(await page.locator('.page-title h1')).toContainText('Reg')
+    
     await page.waitForTimeout(5000)
 })
 
